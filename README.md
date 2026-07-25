@@ -49,8 +49,8 @@ a directory earlier in `PATH` than `/usr/bin`.
 | Path | Holds |
 | --- | --- |
 | `cmd/arch/` | Wiring only: flags, command tree, exit codes |
-| `internal/index/` | Indexer orchestration and the adapter contract |
-| `internal/scip/` | Normalization of every indexer into one canonical symbol graph |
+| `internal/index/` | Subprocess orchestration, the SCIP indexer and framework adapter contracts |
+| `internal/scip/` | Decoding SCIP into one canonical symbol graph |
 | `internal/graph/` | Node and edge model, weighting. Pure data, no IO |
 | `internal/history/` | Git mining, co-change |
 | `internal/boundary/` | `arch.yaml` parsing, glob resolution to module membership |
@@ -63,7 +63,7 @@ a directory earlier in `PATH` than `/usr/bin`.
 | `adapters/` | Out-of-process framework adapters, any language |
 | `web/` | TypeScript SPA source |
 | `research/` | Python metric harness. Never shipped |
-| `testdata/` | Cross-cutting golden fixtures |
+| `testdata/` | Golden fixtures and the shared test corpus |
 
 Every Go package carries a `doc.go` stating its responsibility and its
 prohibition. The prohibitions are load bearing and are the fastest way to learn
