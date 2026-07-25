@@ -13,7 +13,7 @@ Run from this directory, or use `make web` from the repo root.
 | Command | Effect |
 | --- | --- |
 | `npm run build` | Type check, then emit into `../internal/viewer/dist` |
-| `npm run dev` | Vite dev server, proxying `/api` to a running `arch viewer` |
+| `npm run dev` | Vite dev server, proxying `/api` to a running `joist viewer` |
 | `npm run check` | Type check only |
 
 ## Intended views

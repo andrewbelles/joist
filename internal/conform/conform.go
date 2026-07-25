@@ -7,9 +7,9 @@ package conform
 import (
 	"errors"
 
-	"github.com/andrewbelles/call-graph-tooling/internal/boundary"
-	"github.com/andrewbelles/call-graph-tooling/internal/graph"
-	"github.com/andrewbelles/call-graph-tooling/schema"
+	"github.com/andrewbelles/joist/internal/boundary"
+	"github.com/andrewbelles/joist/internal/graph"
+	"github.com/andrewbelles/joist/schema"
 )
 
 // ErrNotImplemented marks the scaffold.

@@ -1,5 +1,5 @@
-BIN     := bin/arch
-PKG     := ./cmd/arch
+BIN     := bin/joist
+PKG     := ./cmd/joist
 VERSION := $(shell git describe --tags --always --dirty 2>/dev/null || echo dev)
 LDFLAGS := -X main.version=$(VERSION)
 

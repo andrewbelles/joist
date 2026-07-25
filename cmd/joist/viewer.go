@@ -5,7 +5,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/andrewbelles/call-graph-tooling/internal/viewer"
+	"github.com/andrewbelles/joist/internal/viewer"
 	"github.com/spf13/cobra"
 )
 
@@ -24,7 +24,7 @@ func newViewerCmd() *cobra.Command {
 			}
 
 			srv := viewer.New(addr, sha)
-			fmt.Fprintf(cmd.ErrOrStderr(), "arch viewer on http://%s (spa=%t)\n", srv.Addr, viewer.Built)
+			fmt.Fprintf(cmd.ErrOrStderr(), "joist viewer on http://%s (spa=%t)\n", srv.Addr, viewer.Built)
 			return srv.ListenAndServe()
 		},
 	}

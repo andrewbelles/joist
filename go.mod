@@ -1,9 +1,9 @@
-module github.com/andrewbelles/call-graph-tooling
+module github.com/andrewbelles/joist
 
 go 1.26
 
 require (
-	github.com/andrewbelles/call-graph-tooling/schema v0.0.0
+	github.com/andrewbelles/joist/schema v0.0.0
 	github.com/spf13/cobra v1.10.1
 )
 
@@ -12,4 +12,4 @@ require (
 	github.com/spf13/pflag v1.0.9 // indirect
 )
 
-replace github.com/andrewbelles/call-graph-tooling/schema => ./schema
+replace github.com/andrewbelles/joist/schema => ./schema

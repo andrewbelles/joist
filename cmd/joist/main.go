@@ -1,4 +1,4 @@
-// Command arch analyzes a build level call graph and checks it against a
+// Command joist analyzes a build level call graph and checks it against a
 // declared architecture. This package is wiring only: flag definitions, command
 // tree assembly, and exit codes. All behavior lives under internal.
 
@@ -21,14 +21,14 @@ var errNotImplemented = errors.New("not implemented")
 
 func main() {
 	if err := newRootCmd().Execute(); err != nil {
-		fmt.Fprintln(os.Stderr, "arch:", err)
+		fmt.Fprintln(os.Stderr, "joist:", err)
 		os.Exit(1)
 	}
 }
 
 func newRootCmd() *cobra.Command {
 	root := &cobra.Command{
-		Use:           "arch",
+		Use:           "joist",
 		Short:         "Build level call graph and architecture conformance",
 		Version:       version,
 		SilenceUsage:  true,
@@ -36,7 +36,7 @@ func newRootCmd() *cobra.Command {
 	}
 
 	root.PersistentFlags().String("config", "arch.yaml", "path to the declared architecture")
-	root.PersistentFlags().String("cache", ".arch/cache", "path to the local artifact cache")
+	root.PersistentFlags().String("cache", ".joist/cache", "path to the local artifact cache")
 
 	root.AddCommand(
 		newCheckCmd(),

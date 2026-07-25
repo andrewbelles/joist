@@ -102,7 +102,7 @@ that crosses a package boundary.
 
 | Command | Effect |
 | --- | --- |
-| `make dev` | Go only build, no Node needed, binary at `bin/arch` |
+| `make dev` | Go only build, no Node needed, binary at `bin/joist` |
 | `make build` | Web build, then Go with `-tags spa`, full binary |
 | `make web` | Vite build into `internal/viewer/dist` |
 | `make test` | `go test` in both modules |

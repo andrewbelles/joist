@@ -47,4 +47,4 @@ jobs:
 
       # Proves the embed path compiles and the SPA output is where Go expects it.
       - run: make build
-      - run: ./bin/arch --version
+      - run: ./bin/joist --version

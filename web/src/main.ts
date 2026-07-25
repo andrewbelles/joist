@@ -4,5 +4,5 @@
 const app = document.querySelector<HTMLElement>("#app");
 
 if (app) {
-  app.textContent = "arch viewer: no views implemented yet";
+  app.textContent = "joist viewer: no views implemented yet";
 }

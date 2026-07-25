@@ -1,4 +1,4 @@
-# call-graph-tooling
+# joist
 
 A build-level call graph analyzer that checks a codebase against the architecture
 it claims to have.
@@ -33,7 +33,7 @@ Requires Go 1.26. The full build additionally requires Node 22.
 
 ```sh
 make dev      # Go only, viewer serves a placeholder page
-make build    # web build, then Go with -tags spa, full binary at bin/arch
+make build    # web build, then Go with -tags spa, full binary at bin/joist
 make test lint fmt-check
 ```
 
@@ -41,14 +41,11 @@ The SPA is compiled in under the `spa` build tag. A plain `go build ./...` needs
 neither Node nor a built `dist` tree, so the Go and TypeScript builds have no
 coupling in either direction.
 
-The binary is named `arch`, which shadows the coreutils `arch(1)` if installed to
-a directory earlier in `PATH` than `/usr/bin`.
-
 ## Repo shape
 
 | Path | Holds |
 | --- | --- |
-| `cmd/arch/` | Wiring only: flags, command tree, exit codes |
+| `cmd/joist/` | Wiring only: flags, command tree, exit codes |
 | `internal/index/` | Subprocess orchestration, the SCIP indexer and framework adapter contracts |
 | `internal/scip/` | Decoding SCIP into one canonical symbol graph |
 | `internal/graph/` | Node and edge model, weighting. Pure data, no IO |

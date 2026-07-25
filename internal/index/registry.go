@@ -5,7 +5,7 @@
 package index
 
 // Registry holds the registered indexers and adapters. It is populated at wiring
-// time in cmd/arch and is read only afterwards.
+// time in cmd/joist and is read only afterwards.
 type Registry struct {
 	indexers map[string]Indexer
 	adapters map[string]Adapter

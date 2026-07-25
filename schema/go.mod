@@ -1,3 +1,3 @@
-module github.com/andrewbelles/call-graph-tooling/schema
+module github.com/andrewbelles/joist/schema
 
 go 1.26

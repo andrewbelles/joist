@@ -11,7 +11,7 @@ package index
 import (
 	"context"
 
-	"github.com/andrewbelles/call-graph-tooling/internal/graph"
+	"github.com/andrewbelles/joist/internal/graph"
 )
 
 // Synthesis is what a framework adapter returns. Edges are already canonical,

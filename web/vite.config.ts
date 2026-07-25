@@ -9,7 +9,7 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    // Proxy to a locally running arch viewer so dev mode reads real artifacts.
+    // Proxy to a locally running joist viewer so dev mode reads real artifacts.
     proxy: {
       "/api": "http://127.0.0.1:7373",
     },
