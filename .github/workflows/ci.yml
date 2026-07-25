@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+          cache-dependency-path: go.sum
+
+      - run: make fmt-check
+      - run: make lint
+      - run: make test
+
+      # Proves the default build needs no Node and no dist tree.
+      - run: go build ./...
+
+      - name: schema module takes no third party dependency
+        run: |
+          cd schema
+          deps=$(go list -deps ./... | grep -v '^github.com/andrewbelles/' | grep '\.' || true)
+          if [ -n "$deps" ]; then echo "unexpected deps:"; echo "$deps"; exit 1; fi
+
+  full:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # Proves the embed path compiles and the SPA output is where Go expects it.
+      - run: make build
+      - run: ./bin/arch --version
