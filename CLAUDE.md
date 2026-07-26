@@ -70,11 +70,37 @@ package cache
 
 Solo development, pragmatic and safe.
 
-- `main` is a first class object. It must always build and always pass CI.
-- Never commit directly to `main`. Work on `dev/<topic>` or `feat/<topic>` and
-  merge by pull request.
-- Do not commit, push, or open a PR unless asked. Leave the work in the tree.
-- Commit messages describe the change, not the process.
+`main` is a first class object. It must always build and always pass CI. Changes
+reach it through a `dev/<topic>` or `feat/<topic>` branch and a pull request,
+never through a direct commit.
+
+### Claude and git
+
+Never, because these write history or touch the remote: `git commit`,
+`git push`, `git merge`, `git rebase`, `git cherry-pick`, `git tag`,
+`gh pr create`.
+
+This applies to `dev/` and feature branches exactly as it applies to `main`. Being
+asked in conversation does not grant permission, and neither does a stated reason
+why a particular change is safe. Relaxing it means editing this file.
+
+Never, because these discard uncommitted work: `git reset --hard`,
+`git checkout -- <path>`, `git restore`, `git clean`, `git stash drop`,
+`git stash clear`.
+
+Fine, because these move refs or park work without losing any: `git branch`,
+`git checkout <branch>`, `git switch`, `git stash push`, `git stash pop`, and
+every read-only command such as `status`, `log`, `diff`, `show`, `blame`.
+
+Note that `checkout` falls on both sides. Switching branches is safe and git
+refuses it when it would overwrite uncommitted changes. Checking out a path
+discards those changes with no warning.
+
+Finish the work, leave it uncommitted in the working tree, and say plainly what
+changed and what was verified. Andrew stages, commits, and pushes.
+
+Commit messages describe the change, not the process. Write one on request as
+text for Andrew to use; do not run it.
 
 ## Invariants
 

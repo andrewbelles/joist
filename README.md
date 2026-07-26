@@ -27,6 +27,8 @@ Early scaffold. The repository shape, the package boundaries, and the artifact
 format are defined. No analysis is implemented; every subcommand returns a
 not-implemented error.
 
+Open decisions and the build order are in [docs/ROADMAP.md](docs/ROADMAP.md).
+
 ## Build
 
 Requires Go 1.26. The full build additionally requires Node 22.
